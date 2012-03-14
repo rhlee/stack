@@ -1,7 +1,6 @@
-typedef struct stack {
-  void *data;
-  struct stack *next;
-} STACK;
+#include "struct.h"
+
+typedef struct stack STACK;
 
 void push(STACK **head, void *value);
 int empty(STACK *head);
