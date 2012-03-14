@@ -1,6 +1,6 @@
 #include "stdlib.h"
 
-void push(STACK **head, int value)
+void push(STACK **head, void *value)
 {
   STACK *node = malloc(sizeof(STACK));  /* create a new node */
  
@@ -19,14 +19,14 @@ int empty(STACK *head)
   return head == NULL;
 }
 
-int pop(STACK **head)
+void *pop(STACK **head)
 {
   if (empty(*head)) {                          /* stack is empty */
     fputs("Error: stack underflow\n", stderr);
     abort();
   } else {                                     /* pop a node */
     STACK *top = *head;
-    int value = top->data;
+    void *value = top->data;
     *head = top->next;
     free(top);
     return value;

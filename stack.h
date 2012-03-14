@@ -1,5 +1,5 @@
 typedef struct stack {
-  int data;
+  void *data;
   struct stack *next;
 } STACK;
 
