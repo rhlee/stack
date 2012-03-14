@@ -4,13 +4,14 @@
 int main()
 {
   STACK *s=NULL;
-  char *i;
-  push(&s, (void *)"kll");
-  push(&s, (void *)"lll");
+  int *i;
+  int j=123;
+  i=&j;
+  push(&s, (void *)i);
   while(!empty(s))
     {
-      i = (char *)pop(&s);
-      printf("x%s",i);
+      i = (int *)pop(&s);
+      printf("x%d",*i);
     }
   return 0;
 }
